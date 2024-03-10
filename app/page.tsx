@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Logo from '../assets/logo.svg';
-import LandingImg from '../assets/main.svg';
+import LandingImg from '../assets/job_offers.svg';
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
