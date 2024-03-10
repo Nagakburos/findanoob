@@ -13,7 +13,7 @@ export default function Home() {
       </header>
       <section className="max-w-6xl mx-auto px-4 sm:px-8 h-screen -mt-20 grid lg:grid-cols-[1fr,400px] items-center">        
       <div>
-        <h1  className=" capitalize text-4xl md:text-7xl font-bold">Assistente  <span className="text primary">de busca de </span>emprego</h1>
+        <h1  className=" capitalize text-4xl md:text-7xl font-bold">empregos <span className="text primary">para </span>novatos</h1>
         <br/>
         <p className="leading-loose max-w-md mt4">Encontre talentos promissores e oportunidades. Conectando empresas inovadoras com profissionais em ascensão, nosso site de empregos oferece uma plataforma intuitiva e acessível para recrutamento e busca de emprego.</p>
         <Button asChild className="my-4">
