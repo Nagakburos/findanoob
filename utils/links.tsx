@@ -8,17 +8,17 @@ type NavLink = {
 const links: NavLink[] = [
   {
     href: "/add-job",
-    label: "Add Job",
+    label: "Find a Noob",
     icon: <Layers />,
   },
   {
     href: "/jobs",
-    label: "jobs",
+    label: "Vagas",
     icon: <AppWindow />,
   },
   {
     href: "/stats",
-    label: "stats",
+    label: "Estatística",
     icon: <AreaChart />,
   },
 ];
