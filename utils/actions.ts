@@ -26,7 +26,6 @@ export async function createJobAction(
     const job: JobType = await prisma.job.create({
       data: {
         ...values,
-
         clerkId: userId,
       },
     });
