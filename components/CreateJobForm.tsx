@@ -1,55 +1,71 @@
-"use client";
+'use client';
 
-import * as z from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
 
-import { Button } from "@/components/ui/button";
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+  JobStatus,
+  JobMode,
+  createAndEditJobSchema,
+  CreateAndEditJobType,
+} from '@/utils/types';
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "O nome de Usuário deve ter mais de 2 characteres.",
-  }),
-});
+import { Button } from '@/components/ui/button';
+import { Form } from '@/components/ui/form';
+
+import { CustomFormField, CustomFormSelect } from './FormComponents';
 
 function CreateJobForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<CreateAndEditJobType>({
+    resolver: zodResolver(createAndEditJobSchema),
     defaultValues: {
-      username: "",
+      position: '',
+      company: '',
+      location: '',
+      status: JobStatus.Pending,
+      mode: JobMode.FullTime,
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: CreateAndEditJobType) {
+
     console.log(values);
   }
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Usuário</FormLabel>
-              <FormControl>
-                <Input placeholder="shadcn" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Enviar</Button>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className='bg-muted p-8 rounded'
+      >
+        <h2 className='capitalize font-semibold text-4xl mb-6'>publicar vaga</h2>
+        <div className='grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start'>
+          {/* position */}
+          <CustomFormField name='Cargo' control={form.control} />
+          {/* company */}
+          <CustomFormField name='empresa' control={form.control} />
+          {/* location */}
+          <CustomFormField name='localização' control={form.control} />
+
+          {/* job status */}
+          <CustomFormSelect
+            name='status'
+            control={form.control}
+            labelText='job status'
+            items={Object.values(JobStatus)}
+          />
+          {/* job  type */}
+          <CustomFormSelect
+            name='mode'
+            control={form.control}
+            labelText='Tipo de contratação'
+            items={Object.values(JobMode)}
+          />
+
+          <Button type='submit' className='self-end capitalize'>
+            Publicar
+          </Button>
+        </div>
       </form>
     </Form>
   );
