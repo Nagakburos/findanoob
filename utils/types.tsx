@@ -39,3 +39,6 @@ export const createAndEditJobSchema = z.object({
   });
   
   export type CreateAndEditJobType = z.infer<typeof createAndEditJobSchema>;
+
+
+  //TODO ERRO NÂO ESTA SENDO RETORNADO.
