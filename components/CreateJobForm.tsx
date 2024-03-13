@@ -41,7 +41,12 @@ function CreateJobForm() {
         });
         return;
       }
-      toast({description})
+      toast({ description: "Vaga Publicada!" });
+      queryClient.invalidateQueries({ queryKey: ["jobs"] });
+      queryClient.invalidateQueries({ queryKey: ["stats"] });
+      queryClient.invalidateQueries({ queryKey: ["charts"] });
+      form.reset();
+      router.push("/jobs");
     },
   });
 
@@ -86,7 +91,7 @@ function CreateJobForm() {
             className="self-end capitalize"
             disabled={isPending}
           >
-            {isPending ? "loading" : "create job"}
+            {isPending ? "Enviando" : "Publicar"}
           </Button>
         </div>
       </form>
