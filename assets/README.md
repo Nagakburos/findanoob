@@ -2045,7 +2045,7 @@ function DeleteJobBtn({ id }: { id: string }) {
     </Button>
   );
 }
-export default DeleteJobBtn;
+export default DeleteJobButton;
 ```
 
 ## Challenge - GetSingleJobAction
