@@ -13,7 +13,7 @@ export type JobType = {
 };
 
 export enum JobStatus {
-  Pending = 'Pendente',
+  Pending = 'Em Processo',
   Interview = 'Entrevista',
   Declined = 'Recusado',
 }
