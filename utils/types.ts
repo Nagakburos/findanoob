@@ -13,15 +13,19 @@ export type JobType = {
 };
 
 export enum JobStatus {
-  Pending = 'Em Processo',
-  Interview = 'Entrevista',
-  Declined = 'Recusado',
+  Pending = 'Contratando',
+ //algo relevante = "Algo relevante",
+  Interview = 'Triagem',
+  Declined = 'Finalizado',
+
 }
 
 export enum JobMode {
   FullTime = 'Integral',
   PartTime = 'Meio período',
   Internship = 'Estágio',
+  voluntary = "Voluntário",
+  Other = "Outro",
 }
 
 export const createAndEditJobSchema = z.object({
