@@ -25,7 +25,7 @@ export enum JobMode {
   PartTime = 'Meio período',
   Internship = 'Estágio',
   voluntary = "Voluntário",
-  Other = "Outro",
+  //Other = "Outro",
 }
 
 export const createAndEditJobSchema = z.object({

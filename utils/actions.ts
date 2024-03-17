@@ -10,6 +10,7 @@ import dayjs from "dayjs";
 
 function authenticateAndRedirect(): string {
   const { userId } = auth();
+  console.log('userId, userId');
   if (!userId) {
     redirect("/");
   }
