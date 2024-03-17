@@ -1,4 +1,6 @@
+import { getStatsAction } from "@/utils/actions";
 function StatsPage() {
+  getStatsAction();
     return <h1 className='text-4xl'>StatsPage</h1>;  
   };
   export default StatsPage;
