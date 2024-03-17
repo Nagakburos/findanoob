@@ -84,9 +84,10 @@ export async function getAllJobsAction({
         status: jobStatus,
       };
     }
-
+const skip = ( page -1 ) * limit
     const jobs: JobType[] = await prisma.job.findMany({
       where: whereClause,
+      take: limit,
       orderBy: {
         createdAt: "desc",
       },
