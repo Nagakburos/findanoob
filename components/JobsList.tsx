@@ -3,7 +3,7 @@ import JobCard from "./JobCard";
 import { useSearchParams } from "next/navigation";
 import { getAllJobsAction } from "@/utils/actions";
 import { useQuery } from "@tanstack/react-query";
-import ButtonContainer from "./ButtonContainer";
+import ComplexButtonContainer from "./ButtonContainer";
 
 function JobsList() {
   const searchParams = useSearchParams();
@@ -31,7 +31,7 @@ function JobsList() {
       <div className="flex items-center justify-between mb-8">
         <h2 className="texte-xl font-semibold capitalize">Nenhuma vaga encontrada...</h2>;
         {totalPages < 2 ? null : (
-          <ButtonContainer currentPage={page} totalPages={totalPages} />
+          <ComplexButtonContainer currentPage={page} totalPages={totalPages} />
         )}
        </div>
 
