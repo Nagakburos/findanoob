@@ -65,11 +65,11 @@ function CreateJobForm() {
         </h2>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 items-start">
           {/* position */}
-          <CustomFormField name="Cargo" control={form.control} />
+          <CustomFormField name="position" control={form.control} />
           {/* company */}
-          <CustomFormField name="empresa" control={form.control} />
+          <CustomFormField name="company" control={form.control} />
           {/* location */}
-          <CustomFormField name="localização" control={form.control} />
+          <CustomFormField name="location" control={form.control} />
 
           {/* job status */}
           <CustomFormSelect
@@ -82,7 +82,7 @@ function CreateJobForm() {
           <CustomFormSelect
             name="mode"
             control={form.control}
-            labelText="Tipo de contratação"
+            labelText="mode"
             items={Object.values(JobMode)}
           />
 
